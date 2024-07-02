@@ -27,7 +27,7 @@ def get_two_random_ints_and_result(operation: Literal['+', '-', '*', '/']) \
         case _:
             raise Exception("Invalid literal passed, use any of the following -> ['+', '-', '*', '/']")
 
-    locators_list = get_locators_list_of_numbers(first_number, second_number, operation)
+    locators_list = get_locators_list_with_numbers_and_operation(first_number, second_number, operation)
 
     return first_number, second_number, result, locators_list
 
@@ -41,12 +41,12 @@ def get_power_result() -> Tuple[int, int, int, List[Tuple[str, str]]]:
     print(f'first_number = {first_number}, second_number = {second_number}, '
           f'operation = (^) and result {result}')
 
-    locators_list = get_locators_list_of_numbers(first_number, second_number, '^')
+    locators_list = get_locators_list_with_numbers_and_operation(first_number, second_number, '^')
 
     return first_number, second_number, result, locators_list
 
 
-def get_locators_list_of_numbers(first_number: int, second_number: int,
+def get_locators_list_with_numbers_and_operation(first_number: int, second_number: int,
                                  operation: Literal['+', '-', '*', '/', '^']) -> List[Tuple[str, str]]:
     locators: List[Tuple[str, str]] = []
 
