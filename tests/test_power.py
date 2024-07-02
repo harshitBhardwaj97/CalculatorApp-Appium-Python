@@ -7,7 +7,7 @@ from utils.utils import *
 
 class TestPower:
     @allure.title("Checking power operation")
-    def test_division_operation(self, appium_driver):
+    def test_power_operation(self, appium_driver):
         wait = WebDriverWait(appium_driver, 10)
 
         first_number, second_number, operation_result, locator_list = get_power_result()

@@ -9,7 +9,7 @@ from utils.utils import *
 
 class TestPower:
     @allure.title("Checking factorial operation")
-    def test_division_operation(self, appium_driver):
+    def test_factorial_operation(self, appium_driver):
         wait = WebDriverWait(appium_driver, 10)
 
         number_mapping: Dict[int, str] = {
@@ -48,3 +48,25 @@ class TestPower:
 
         assert final_result_text == str(result)
 
+
+    @allure.title("Checking factorial operation of zero")
+    def test_zero_factorial_operation(self, appium_driver):
+        wait = WebDriverWait(appium_driver, 10)
+
+        number: int = 0
+        result: int = factorial(number)
+        print(f'Calculating factorial of {number}')
+
+        number_zero = wait.until(EC.element_to_be_clickable(Locators.number_zero))
+        factorial_operation = wait.until(EC.element_to_be_clickable(Locators.factorial_operation))
+
+        number_zero.click()
+        factorial_operation.click()
+
+        equal_button = wait.until(EC.element_to_be_clickable(Locators.equal_button))
+        equal_button.click()
+
+        final_result = wait.until(EC.presence_of_element_located(Locators.result_final))
+        final_result_text = final_result.text
+
+        assert final_result_text == str(result)    
