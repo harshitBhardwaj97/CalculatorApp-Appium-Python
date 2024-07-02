@@ -1,0 +1,2 @@
+first_number = 29, second_number = 33, operation = / and result = 0.8787878787878788
+Checking the division of 29 and 33

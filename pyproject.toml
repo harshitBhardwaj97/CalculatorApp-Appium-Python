@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "calculatorapp-appium-python"
+version = "0.1.0"
+description = ""
+authors = ["Harshit Bhardwaj <harshitbhardwaj97@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+appium-python-client = "^4.0.0"
+pytest = "^8.2.2"
+allure-pytest = "^2.13.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = [
+    "--alluredir", "allure-results",
+    "--clean-alluredir"
+]
