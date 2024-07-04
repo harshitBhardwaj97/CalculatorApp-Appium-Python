@@ -32,7 +32,7 @@ class TestPower:
 
         first_number: int = 5
         second_number: int = 0
-        result: int = pow(first_number, second_number)
+        result: int = int(pow(first_number, second_number))
 
         print(f'Checking the power of {first_number} to {second_number}')
         
